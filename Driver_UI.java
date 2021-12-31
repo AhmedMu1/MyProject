@@ -1,6 +1,6 @@
 public class Driver_UI extends Driver_Controller{
     public void Print_Driver(int index){
-        System.out.println("Name: " + DS.get(index).getName());
+        System.out.println("-------------------------------------\nName: " + DS.get(index).getName());
         System.out.println("Mobile Number: " + DS.get(index).getMobile_Number());
         System.out.println("Email: " + DS.get(index).getEmail());
         System.out.println("Driver License: " + DS.get(index).getDriver_License());
@@ -8,11 +8,11 @@ public class Driver_UI extends Driver_Controller{
     }
     public boolean Log_in(String Name, String Password){
         if(D_Login(Name, Password)) {
-            System.out.println("Login Succesful");
+            System.out.println("-------------------------------------\nLogin Succesful");
             return true;
         }
         else {
-            System.out.println("Login Fail");
+            System.out.println("-------------------------------------\nLogin Fail");
             return false;
         }
     }
@@ -43,7 +43,7 @@ public class Driver_UI extends Driver_Controller{
 
     public void showNotification(String Username)
     {
-        System.out.println("Client: " + getClient(Username) + " has accepted your offer.");
+        System.out.println("-------------------------------------\nClient: " + getClient(Username) + " has accepted your offer.");
     }
 
     public void endRide(String Username)

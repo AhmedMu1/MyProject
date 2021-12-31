@@ -9,6 +9,7 @@ public class Controller {
     Storage AS = new Admin_Storage();
     Login L = new Login();
     Trip T = new Trip();
+    Harvesine H = new Harvesine();
     Notification CD = new Client_to_Driver();
     Notification DC = new Driver_to_Client();
 }

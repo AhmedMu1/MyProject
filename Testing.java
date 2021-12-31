@@ -6,16 +6,16 @@ public class Testing {
 
         Scanner input = new Scanner(System.in);
         do {
-            System.out.println("Choose:\n1-Client\n2-Driver\n3-Admin");
+            System.out.println("-------------------------------------\nChoose:\n---------\n1-Client\n2-Driver\n3-Admin");
             int person = input.nextInt();
             switch (person) {
                 case 1:
                     Client_UI c = new Client_UI();
-                    System.out.println("-------------------------------------\nChoose:\n1-Registeration\n2-Login");
+                    System.out.println("-------------------------------------\nChoose:\n---------\n1-Registeration\n2-Login");
                     int Cchoice = input.nextInt();
                     switch (Cchoice) {
                         case 1:
-                            System.out.println("Please, Enter your Name, Password, Mobile_Number, Email:");
+                            System.out.println("-------------------------------------\nPlease, Enter your Name, Password, Mobile_Number, Email:");
                             String CName = input.next();
                             String CPassword = input.next();
                             long CMobile_Number = input.nextLong();
@@ -23,11 +23,11 @@ public class Testing {
                             c.C_Registration(CName, CPassword, CMobile_Number, CEmail);
                             break;
                         case 2:
-                            System.out.println("Please, Enter your Name, Password");
+                            System.out.println("-------------------------------------\nPlease, Enter your Name, Password");
                             String Username = input.next();
                             String Pass = input.next();
                             if (c.Log_in(Username, Pass)) {
-                                System.out.println("Choose an Option:\n1-Request Ride\n2-List Ride Offers\n3- Rate previous ride\n4-Log Out");
+                                System.out.println("-------------------------------------\nChoose an Option:\n---------------------\n1-Request Ride\n2-List Ride Offers\n3-Rate previous ride\n4-Log Out");
                                 int o = input.nextInt();
                                 switch (o) {
                                     case 1:
@@ -45,21 +45,21 @@ public class Testing {
                                     case 4:
                                         break;
                                     default:
-                                        System.err.println("Invalid Choice");
+                                        System.err.println("-------------------------------------\nInvalid Choice");
                                 }
                             }
                             break;
                         default:
-                            System.err.println("Invalid Choice");
+                            System.err.println("-------------------------------------\nInvalid Choice");
                     }
                     break;
                 case 2:
                     Driver_UI D = new Driver_UI();
-                    System.out.println("-------------------------------------\nChoose:\n1-Registeration\n2-Login");
+                    System.out.println("-------------------------------------\nChoose:\n---------\n1-Registeration\n2-Login");
                     int d = input.nextInt();
                     switch (d) {
                         case 1:
-                            System.out.println("Please, Enter your Name, Password, Mobile_Number, Email, Driving License and National Id:");
+                            System.out.println("-------------------------------------\nPlease, Enter your Name, Password, Mobile_Number, Email, Driving License and National Id:");
                             String DName = input.next();
                             String DPassword = input.next();
                             Long DMobile_Number = input.nextLong();
@@ -69,15 +69,15 @@ public class Testing {
                             D.D_Registration(DName, DPassword, DMobile_Number, DEmail, DLicense, DNational_ID);
                             break;
                         case 2:
-                            System.out.println("Please, Enter your Name, Password");
+                            System.out.println("-------------------------------------\nPlease, Enter your Name, Password");
                             String Username = input.next();
                             String Pass = input.next();
                             if(D.Log_in(Username, Pass)){
-                            System.out.println("Choose an Option:\n1-Add Favourite Area\n2-Show Rides\n3-Offers Notification\n4- End Ride\n5- Print your balance\n6-Log out");
+                            System.out.println("-------------------------------------\nChoose an Option:\n---------------------\n1-Add Favourite Area\n2-Show Rides\n3-Offers Notification\n4-End Ride\n5-Print your balance\n6-Log out");
                             int Dchoice = input.nextInt();
                             switch (Dchoice) {
                                 case 1:
-                                    System.out.print("How many Areas do you want to add? ");
+                                    System.out.print("-------------------------------------\nHow many Areas do you want to add? ");
                                     int areas = input.nextInt();
                                     for (int i = 0; i < areas; i++) {
                                         String Area = input.next();
@@ -86,7 +86,7 @@ public class Testing {
                                     break;
                                 case 2:
                                     D.printClient(Username);
-                                    System.out.println("If you want to select a ride choose a Name and put an offer else type 0");
+                                    System.out.println("-------------------------------------\nIf you want to select a ride choose a Name and put an offer else type 0");
                                     String CName = input.next();
                                     if (CName.equalsIgnoreCase("0"))
                                         break;
@@ -105,18 +105,18 @@ public class Testing {
                                 case 6:
                                     break;
                                 default:
-                                    System.err.println("Invalid Choice");
+                                    System.err.println("-------------------------------------\nInvalid Choice");
                                     break;
                             }
                             }
                             break;
                         default:
-                            System.err.println("Invalid Choice");
+                            System.err.println("-------------------------------------\nInvalid Choice");
                     }
                     break;
                 case 3:
                     Admin_UI A = new Admin_UI();
-                    System.out.println("Please, Enter your Name, Password");
+                    System.out.println("-------------------------------------\nPlease, Enter your Name, Password");
                     String Username = input.next();
                     String Pass = input.next();
                     if(A.Log_in(Username, Pass)) {
@@ -124,7 +124,7 @@ public class Testing {
                         break;
                     }
                 default:
-                    System.err.println("Invalid Choice");
+                    System.err.println("-------------------------------------\nInvalid Choice");
             }
 
         } while (true);

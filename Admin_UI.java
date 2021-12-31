@@ -7,7 +7,7 @@ public class Admin_UI extends Admin_Controller {
         List_Registrations();
         boolean flag = true;
         do {
-            System.out.println("To verify any account, choose a number and if not type 0");
+            System.out.println("-------------------------------------\nTo verify any account, choose a number and if not type 0");
             int n = input.nextInt();
             if(n == 0) flag = false;
             else{

@@ -19,6 +19,7 @@ public class Client_Controller extends Controller {
     public void Request_ride(String Source, String Destination) {
         T.setSource(Source);
         T.setDestination(Destination);
+        System.out.println("The Time Taken to reach your destination (Using Harvesine) = " + (H.Calc_distance(Source, Destination)/60.0 + " Hours"));
     }
 
     public void Request_Driver(String Username) {

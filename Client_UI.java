@@ -2,17 +2,17 @@
 public class Client_UI extends Client_Controller {
 
     public void Print_Client(int index) {
-        System.out.println("Name: " + CS.get(index).getName());
+        System.out.println("-------------------------------------\nName: " + CS.get(index).getName());
         System.out.println("Mobile Number: " + CS.get(index).getMobile_Number());
         System.out.println("Email: " + CS.get(index).getEmail());
     }
 
     public boolean Log_in(String Name, String Password) {
         if (C_Login(Name, Password)) {
-            System.out.println("Login Successful");
+            System.out.println("-------------------------------------\nLogin Successful");
             return true;
         }
-        System.out.println("Login Fail");
+        System.out.println("-------------------------------------\nLogin Fail");
         return false;
     }
 
@@ -28,7 +28,7 @@ public class Client_UI extends Client_Controller {
             }
         }
 
-        System.out.println("Please, Enter your Source location");
+        System.out.println("-------------------------------------\nPlease, Enter your Source location");
         String S = input.next();
         Client_Storage.Source_Areas.get(index).add(S);
         System.out.println("Please, Enter your Destination location");
@@ -63,9 +63,9 @@ public class Client_UI extends Client_Controller {
 
     public void Rate(String Cname) {
         printPrevRides(Cname);
-        System.out.println("Enter the name of the driver: ");
+        System.out.println("-------------------------------------\nEnter the name of the driver: ");
         String dname = input.next();
-        System.out.println("Enter the Rate of the driver: ");
+        System.out.println("-------------------------------------\nEnter the Rate of the driver: ");
         int R = input.nextInt();
         ratePrevRide(dname, R);
 

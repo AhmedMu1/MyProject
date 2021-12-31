@@ -13,6 +13,7 @@ public class Trip {
 
     public static ArrayList<String> Ride = new ArrayList<>();
     public static ArrayList<Trip> rideHistory = new ArrayList<Trip>();
+    
 
     public void add(String Driver_name, String Client_name, int Offer, String Source, long Mobile_Number) {
         setDName(Driver_name);
@@ -21,6 +22,7 @@ public class Trip {
         setSource(Source);
         setD_mo_no(Mobile_Number);
     }
+
 
     public String getDName() {
         return DName;
