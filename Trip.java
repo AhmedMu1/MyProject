@@ -1,36 +1,66 @@
-import java.util.ArrayList;
+package testing;
 
-public abstract class Trip {
-    protected String Source_Name;
-    protected String Destination_Name;
-    protected static ArrayList<String> Source = new ArrayList<String>();
+public class Trip {
+    private static String Source;
+    private static String Destination;
+    private static int Offer;
+    private String DName;
+    private String CName;
+    private long D_mo_no;
 
-    public abstract void Calc_Distance();
-    public abstract void Calc_Time();
-
-    public String getSource_Name() {
-        return Source_Name;
+    public void add(String Driver_name,String Client_name, int Offer, String Source, long Mobile_Number){
+        setDName(Driver_name);
+        setCName(Client_name);
+        setOffer(Offer);
+        setSource(Source);
+        setD_mo_no(Mobile_Number);
+    }
+    public String getDName() {
+        return DName;
     }
 
-    public void setSource_Name(String Source_Name) {
-        this.Source_Name = Source_Name;
+    public void setDName(String DName) {
+        this.DName = DName;
     }
 
-    public String getDestination_Name() {
-        return Destination_Name;
+    public String getCName() {
+        return CName;
     }
 
-    public void setDestination_Name(String Destination_Name) {
-        this.Destination_Name = Destination_Name;
+    public void setCName(String CName) {
+        this.CName = CName;
     }
 
-    public int getListSize()
-    {
-        return Source.size();
+    public long getD_mo_no() {
+        return D_mo_no;
     }
 
-    public void getSource(int i)
-    {
-        System.out.println(Source.get(i));
+    public void setD_mo_no(long D_mo_no) {
+        this.D_mo_no = D_mo_no;
+    }
+    
+    
+    public String getSource() {
+        return Source;
+    }
+
+    public void setSource(String Source) {
+        this.Source = Source;
+    }
+
+    public String getDestination() {
+        return Destination;
+    }
+
+    public void setDestination(String Destination) {
+        this.Destination = Destination;
+    }
+
+    public int getOffer(){
+        return Offer;
+    }
+
+    public void setOffer(int p){
+        Offer = p;
     }
 }

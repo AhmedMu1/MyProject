@@ -1,32 +1,28 @@
+package testing;
 import java.util.ArrayList;
 
 public class Client_Storage extends Storage{
-    protected int Rides_Offers[];
     protected static ArrayList<Registration> Client = new ArrayList<Registration>();
+    public static ArrayList<ArrayList<String>> Source_Areas = new ArrayList<ArrayList<String>>();
+    public static ArrayList<Trip> all_Offers = new ArrayList<Trip>();
+
+
     @Override
     public void Add(Registration c){
         Client.add(c);
     }
 
     @Override
-    public void get(int i) {
-        System.out.println("----------------------------");
-        System.out.println(Client.get(i).getName());
-        System.out.println(Client.get(i).getMobile_Number());
-        System.out.println(Client.get(i).getEmail());
-    }
-    public String getName(int i)
-    {
-        return Client.get(i).getName();
-    }
-    public String getPassword(int i)
-    {
-        return Client.get(i).getPassword();
+    public Registration get(int i) {
+        return Client.get(i);
     }
     @Override
     public int get_size() {
         return Client.size();
     }
 
-    
+    @Override
+    public void delete(int i) {
+        Client.remove(i);
+    }
 }

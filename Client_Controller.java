@@ -1,17 +1,40 @@
-public class Client_Controller extends Controller{
-    Notification n=new Client_to_Driver();
-    Driver_Storage ds = new Driver_Storage();
-    public void Request_Ride(){
-        System.out.print("Enter Source: ");
-        String source = input.next();
-        System.out.print("Enter Destination: ");
-        String Destination = input.next();
-        Trip t = new Google_Maps_API(source, Destination);
-        if(getFvAreaDriver(source))
-        {
-            n.Notify();
+package testing;
+public class Client_Controller extends Controller {
+
+    public void C_Registration(String Name, String Password, long Mobile_Number, String Email) {
+        CR.register(Name, Password, Mobile_Number, Email, " ", 0);
+        CS.Add(CR);
+    }
+
+    public boolean C_Login(String Name, String Password) {
+        L.Login(Name, Password);
+        for (int i = 0; i < CS.get_size(); i++) {
+            System.out.println(CS.get(i).getName());
+            if (Name.equals(CS.get(i).getName()) && Password.equals(CS.get(i).getPassword())) {
+                return true;
+            }
         }
-        else
-            System.out.println("There is no available drivers right now\nPlease wait.");
+        return false;
+    }
+
+    public void Request_ride(String Source, String Destination) {
+        T.setSource(Source);
+        T.setDestination(Destination);
+    }
+
+    public void Request_Driver(String Username) {
+        int no = 1;
+
+        for (int i = 0; i < Client_Storage.all_Offers.size(); i++) {
+
+            if (Username.equals(Client_Storage.all_Offers.get(i).getCName())) {
+                System.out.println("---------------\n" + no++);
+                System.out.println("Driver Name: " + Client_Storage.all_Offers.get(i).getDName());
+                System.out.println("Offer: " + Client_Storage.all_Offers.get(i).getOffer());
+                System.out.println("Location: " + Client_Storage.all_Offers.get(i).getSource());
+                System.out.println("Mobile Number: " + Client_Storage.all_Offers.get(i).getD_mo_no());
+            }
+
+        }
     }
 }

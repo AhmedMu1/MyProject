@@ -1,14 +1,10 @@
+package testing;
+import java.util.ArrayList;
+
 public class Client_Registration  extends Registration{
-    
     @Override
-    public void register() {
-        super.register();
+    public void register(String Name, String Password, long Mobile_Number, String Email, String Driver_License, long National_ID) {
+        super.register(Name, Password, Mobile_Number, Email,"", 0);
+        Client_Storage.Source_Areas.add(new ArrayList<>());
     }
-    @Override
-    public void print_Details(){
-        System.out.println("-------------");
-        System.out.println("Client Details");
-        super.print_Details();
-    }
-    
 }

@@ -1,4 +1,4 @@
-public class Google_Maps_API extends Trip{
+/*public class Google_Maps_API extends Trip{
     public Google_Maps_API(String S, String D){
         Source_Name = S;
         Destination_Name = D;
@@ -14,4 +14,4 @@ public class Google_Maps_API extends Trip{
     public void Calc_Time() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-}
+}*/

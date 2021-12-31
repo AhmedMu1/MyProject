@@ -1,9 +1,7 @@
-import java.util.Scanner;
-
+package testing;
 public class User_Info {
-    protected String Name;
-    protected String Password;
-    Scanner input = new Scanner(System.in);
+    private String Name;
+    private String Password;
     public String getName() {
         return Name;
     }
