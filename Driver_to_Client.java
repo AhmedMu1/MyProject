@@ -1,4 +1,3 @@
-package testing;
 public class Driver_to_Client extends Notification{
 
     @Override

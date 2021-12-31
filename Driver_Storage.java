@@ -1,10 +1,9 @@
-package testing;
 import java.util.ArrayList;
 
 public class Driver_Storage extends Storage{
     protected static ArrayList<Registration> Drivers = new ArrayList<Registration>();
     public static ArrayList<ArrayList<String>> Favourite_Areas = new ArrayList<ArrayList<String>>();
-    
+    protected static ArrayList<Integer> driverBalance = new ArrayList<Integer>();
     
     @Override
     public void Add(Registration D) {
@@ -24,4 +23,5 @@ public class Driver_Storage extends Storage{
     public void delete(int i) {
         Drivers.remove(i);
     }
+
 }

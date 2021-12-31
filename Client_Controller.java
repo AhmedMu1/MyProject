@@ -1,4 +1,4 @@
-package testing;
+
 public class Client_Controller extends Controller {
 
     public void C_Registration(String Name, String Password, long Mobile_Number, String Email) {
@@ -9,7 +9,6 @@ public class Client_Controller extends Controller {
     public boolean C_Login(String Name, String Password) {
         L.Login(Name, Password);
         for (int i = 0; i < CS.get_size(); i++) {
-            System.out.println(CS.get(i).getName());
             if (Name.equals(CS.get(i).getName()) && Password.equals(CS.get(i).getPassword())) {
                 return true;
             }
@@ -33,6 +32,31 @@ public class Client_Controller extends Controller {
                 System.out.println("Offer: " + Client_Storage.all_Offers.get(i).getOffer());
                 System.out.println("Location: " + Client_Storage.all_Offers.get(i).getSource());
                 System.out.println("Mobile Number: " + Client_Storage.all_Offers.get(i).getD_mo_no());
+            }
+
+        }
+    }
+
+    public void printPrevRides(String Username) {
+        int no = 1;
+
+        for (int i = 0; i < Trip.rideHistory.size(); i++) {
+            if (Username.equals(Trip.rideHistory.get(i).getCName())) {
+                System.out.println("---------------\n" + no++);
+                System.out.println("Driver Name: " + Trip.rideHistory.get(i).getDName());
+                System.out.println("Offer: " + Trip.rideHistory.get(i).getOffer());
+                System.out.println("Location: " + Trip.rideHistory.get(i).getSource());
+                System.out.println("Mobile Number: " + Trip.rideHistory.get(i).getD_mo_no());
+            }
+
+        }
+    }
+
+    public void ratePrevRide(String dname, int R) {
+        for (int i = 0; i < Trip.rideHistory.size(); i++) {
+
+            if (dname.equals(Trip.rideHistory.get(i).getDName())) {
+                T.setRate(R);
             }
 
         }

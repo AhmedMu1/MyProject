@@ -1,4 +1,3 @@
-package testing;
 public class User_Info {
     private String Name;
     private String Password;

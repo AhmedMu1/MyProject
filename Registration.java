@@ -1,4 +1,3 @@
-package testing;
 public abstract class Registration extends User_Info{
     private String Email;
     private long Mobile_Number;

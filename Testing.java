@@ -1,4 +1,3 @@
-package testing;
 import java.util.Scanner;
 
 public class Testing {
@@ -28,7 +27,7 @@ public class Testing {
                             String Username = input.next();
                             String Pass = input.next();
                             if (c.Log_in(Username, Pass)) {
-                                System.out.println("Choose an Option:\n1-Request Ride\n2-List Ride Offers\n3-Log Out");
+                                System.out.println("Choose an Option:\n1-Request Ride\n2-List Ride Offers\n3- Rate previous ride\n4-Log Out");
                                 int o = input.nextInt();
                                 switch (o) {
                                     case 1:
@@ -41,6 +40,9 @@ public class Testing {
                                         c.SelectDriver(Username, dname);
                                         break;
                                     case 3:
+                                        c.Rate(Username);
+                                        break;
+                                    case 4:
                                         break;
                                     default:
                                         System.err.println("Invalid Choice");
@@ -70,8 +72,8 @@ public class Testing {
                             System.out.println("Please, Enter your Name, Password");
                             String Username = input.next();
                             String Pass = input.next();
-                            D.Log_in(Username, Pass);
-                            System.out.println("Choose an Option:\n1-Add Favourite Area\n2-Show Rides\n3-Offers Notification\n4-Log out");
+                            if(D.Log_in(Username, Pass)){
+                            System.out.println("Choose an Option:\n1-Add Favourite Area\n2-Show Rides\n3-Offers Notification\n4- End Ride\n5- Print your balance\n6-Log out");
                             int Dchoice = input.nextInt();
                             switch (Dchoice) {
                                 case 1:
@@ -86,19 +88,26 @@ public class Testing {
                                     D.printClient(Username);
                                     System.out.println("If you want to select a ride choose a Name and put an offer else type 0");
                                     String CName = input.next();
-                                    if(CName.equalsIgnoreCase("0"))
+                                    if (CName.equalsIgnoreCase("0"))
                                         break;
                                     int offer = input.nextInt();
-                                    D.select_ride(Username,CName, offer);
+                                    D.select_ride(Username, CName, offer);
                                     break;
                                 case 3:
-                                    
+                                    D.showNotification(Username);
                                     break;
                                 case 4:
+                                    D.endRide(Username);
+                                    break;
+                                case 5:
+                                    System.out.println(D.getBalance(Username)); 
+                                    break;
+                                case 6:
                                     break;
                                 default:
                                     System.err.println("Invalid Choice");
                                     break;
+                            }
                             }
                             break;
                         default:
@@ -110,9 +119,10 @@ public class Testing {
                     System.out.println("Please, Enter your Name, Password");
                     String Username = input.next();
                     String Pass = input.next();
-                    A.Log_in(Username, Pass);
-                    A.Verify_Registration();
-                    break;
+                    if(A.Log_in(Username, Pass)) {
+                        A.Verify_Registration();
+                        break;
+                    }
                 default:
                     System.err.println("Invalid Choice");
             }

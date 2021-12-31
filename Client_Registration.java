@@ -1,4 +1,3 @@
-package testing;
 import java.util.ArrayList;
 
 public class Client_Registration  extends Registration{

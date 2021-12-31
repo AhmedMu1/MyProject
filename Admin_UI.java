@@ -1,4 +1,3 @@
-package testing;
 import java.util.ArrayList;
 
 public class Admin_UI extends Admin_Controller {
@@ -14,14 +13,19 @@ public class Admin_UI extends Admin_Controller {
             else{
                 DS.Add(get_obj(n-1));
                 Driver_Storage.Favourite_Areas.add(new ArrayList());
+                Driver_Storage.driverBalance.add(0);
                 AS.delete(n-1);
             }
         } while (flag);
     }
-    public void Log_in(String Name, String Password){
-        if(Name.equals("Admin") && Password.equals("Admin"))
+    public boolean Log_in(String Name, String Password){
+        if(Name.equals("Admin") && Password.equals("Admin")) {
             System.out.println("Login Succesful");
-        else
+            return true;
+        }
+        else {
             System.out.println("Login Fail");
+            return false;
+        }
     }
 }

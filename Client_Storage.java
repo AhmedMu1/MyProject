@@ -1,4 +1,3 @@
-package testing;
 import java.util.ArrayList;
 
 public class Client_Storage extends Storage{
@@ -16,6 +15,7 @@ public class Client_Storage extends Storage{
     public Registration get(int i) {
         return Client.get(i);
     }
+
     @Override
     public int get_size() {
         return Client.size();

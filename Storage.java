@@ -1,4 +1,3 @@
-package testing;
 public abstract class Storage {
     public abstract void Add(Registration R);
     public abstract Registration get(int i);

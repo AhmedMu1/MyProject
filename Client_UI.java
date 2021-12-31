@@ -1,4 +1,3 @@
-package testing;
 
 public class Client_UI extends Client_Controller {
 
@@ -10,7 +9,7 @@ public class Client_UI extends Client_Controller {
 
     public boolean Log_in(String Name, String Password) {
         if (C_Login(Name, Password)) {
-            System.out.println("Login Succesful");
+            System.out.println("Login Successful");
             return true;
         }
         System.out.println("Login Fail");
@@ -46,8 +45,29 @@ public class Client_UI extends Client_Controller {
     }
 
     public void SelectDriver(String cname, String dname) {
-
-        
+        Trip.Ride.add(dname);
+        Trip.Ride.add(cname);
+        for (int i = 0; i < Client_Storage.all_Offers.size(); i++) {
+            if (Client_Storage.all_Offers.get(i).getCName() == cname) {
+                if (Client_Storage.all_Offers.get(i).getDName() != dname) {
+                    Client_Storage.all_Offers.remove(i);
+                }
+            }
+            if (Client_Storage.all_Offers.get(i).getDName() == dname) {
+                if (Client_Storage.all_Offers.get(i).getCName() != cname) {
+                    Client_Storage.all_Offers.remove(i);
+                }
+            }
+        }
     }
 
+    public void Rate(String Cname) {
+        printPrevRides(Cname);
+        System.out.println("Enter the name of the driver: ");
+        String dname = input.next();
+        System.out.println("Enter the Rate of the driver: ");
+        int R = input.nextInt();
+        ratePrevRide(dname, R);
+
+    }
 }

@@ -1,4 +1,3 @@
-package testing;
 public abstract class Notification {
     private String Name;
     private int Offer;

@@ -1,4 +1,3 @@
-package testing;
 public class Admin_Controller extends Controller{
     
     public void List_Registrations(){
